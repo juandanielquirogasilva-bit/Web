@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Ropa - Móvil</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8a2be2, #ff1493, #00bfff); /* Gradiente neón con violeta */
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(138, 43, 226, 0.9); /* Violeta neón semi-transparente */
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px #8a2be2;
+        }
+
+        .container {
+            flex: 1;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(138, 43, 226, 0.5); /* Efecto neón violeta */
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #ff1493; /* Rosa neón para títulos */
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #00bfff; /* Azul neón */
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #8a2be2, #ff1493);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff1493, #00bfff);
+            box-shadow: 0 0 15px #8a2be2;
+        }
+
+        footer {
+            background: rgba(138, 43, 226, 0.9);
+            padding: 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Media queries para móviles */
+        @media (max-width: 768px) {
+            .catalog {
+                grid-template-columns: 1fr; /* Una columna en móviles */
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .product {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Ropa Estilo Neón</h1>
+    </header>
+
+    <div class="container">
+        <div class="catalog">
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/8a2be2/ffffff?text=Camiseta+Neon" alt="Camiseta Neon">
+                <div class="product-info">
+                    <h3>Camiseta Neon Violeta</h3>
+                    <p>Camiseta ajustada con diseño fluorescente, perfecta para noches de fiesta. Material transpirable.</p>
+                    <div class="price">$25.99</div>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/ff1493/ffffff?text=Pantalones+Deportivos" alt="Pantalones Deportivos">
+                <div class="product-info">
+                    <h3>Pantalones Deportivos Rosa</h3>
+                    <p>Pantalones cómodos con acentos neón, ideales para el gimnasio o paseos urbanos.</p>
+                    <div class="price">$39.99</div>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/00bfff/ffffff?text=Chaqueta+Azul" alt="Chaqueta Azul">
+                <div class="product-info">
+                    <h3>Chaqueta Azul Neón</h3>
+                    <p>Chaqueta ligera con capucha, resistente al agua y con detalles luminosos.</p>
+                    <div class="price">$49.99</div>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/8a2be2/ffffff?text=Vestido+Violeta" alt="Vestido Violeta">
+                <div class="product-info">
+                    <h3>Vestido Violeta Fluorescente</h3>
+                    <p>Vestido elegante con corte moderno, ideal para eventos nocturnos.</p>
+                    <div class="price">$35.99</div>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/ff1493/ffffff?text=Shorts+Neon" alt="Shorts Neon">
+                <div class="product-info">
+                    <h3>Shorts Neon Rosa</h3>
+                    <p>Shorts cómodos y vibrantes, perfectos para el verano y actividades al aire libre.</p>
+                    <div class="price">$19.99</div>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200/00bfff/ffffff?text=Gorra+Azul" alt="Gorra Azul">
+                <div class="product-info">
+                    <h3>Gorra Azul Neón</h3>
+                    <p>Gorra ajustable con diseño urbano, protege del sol y añade estilo.</p>
+                    <div class="price">$15.99</div>
+                    <a href="#" class="btn">Comprar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Catálogo Neón. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
